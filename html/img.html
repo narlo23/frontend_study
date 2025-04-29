@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 이미지 테스트</title>
+  </head>
+  <body>
+    <img src="./img/suzume-wide.png" alt="suzume" />
+
+    <!-- viewport 너비가 799px 이하일 경우 suzume.png를, 800px 이상일 경우 suzume-wide.png를 렌더링 -->
+    <picture>
+      <source media="(max-width: 799px)" srcset="./img/suzume.png" />
+      <source media="(min-width: 800px)" srcset="./img/suzume-wide.png" />
+      <img src="./img/suzume.png" alt="suzume" />
+    </picture>
+  </body>
+</html>
