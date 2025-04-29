@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블</title>
+    <link rel="stylesheet" href="table.css" />
+  </head>
+  <body>
+    <p id="summary">다음은 개인정보를 작성하는 표입니다.</p>
+    <table aria-describedby="summary">
+      <caption>
+        <strong>개인정보</strong>
+      </caption>
+      <tr>
+        <th>이름</th>
+        <td class="table_data"></td>
+        <th>연락처</th>
+        <td class="table_data"></td>
+      </tr>
+      <tr>
+        <th>주소</th>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <th>자기소개</th>
+        <td colspan="3"></td>
+      </tr>
+    </table>
+  </body>
+</html>

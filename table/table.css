@@ -1,0 +1,21 @@
+table,
+tr,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+caption {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.table_data {
+  min-width: 100px;
+}
+
+th {
+  background-color: #eee;
+}
