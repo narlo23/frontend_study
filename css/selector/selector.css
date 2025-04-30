@@ -1,0 +1,14 @@
+li[class] {
+  /* 클래스 속성이 있는 모든 li */
+  font-size: 200%;
+}
+
+li[class="a"] {
+  /* 클래스가 정확히 a인 선택자 */
+  background-color: yellow;
+}
+
+li[class~="a"] {
+  /* 공백으로 구분된 목록의 일부로 a 클래스를 포함하는 값도 일치 */
+  color: red;
+}
