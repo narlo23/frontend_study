@@ -12,3 +12,18 @@ li[class~="a"] {
   /* 공백으로 구분된 목록의 일부로 a 클래스를 포함하는 값도 일치 */
   color: red;
 }
+
+li[class^="a"] {
+  /* 클래스가 a로 시작하는 li */
+  font-size: 200%;
+}
+
+li[class$="a"] {
+  /* 클래스가 a로 끝나는 li */
+  background-color: yellow;
+}
+
+li[class*="a"] {
+  /* 클래스명에 a를 포함하는 모든 li */
+  color: red;
+}
