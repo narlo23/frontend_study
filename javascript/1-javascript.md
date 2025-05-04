@@ -40,10 +40,128 @@ const는 반드시 값을 선언과 동시에 정의해야 함
 변수 및 함수 선언문이 스코프 내의 최상단으로 끌어올려지는 현상
 => 선언하기 전에 해당 변수를 사용할 수 있다. 하지만 초기화 전까지는 undefined 값을 가진다.
 
-함수 표현식은 호이스팅 되지 않는다.
-
 ```
     1) 기본적으로 const
     2) 재할당이 필요한 경우 let
     3) var은 사용하지 말자 (실수가 발생하기 쉽다)
+```
+
+함수 표현식은 호이스팅 되지 않는다.
+
+```javascript
+    foo(); // "bar"
+
+    /* 함수 선언 */
+    function foo() {
+        console.log("bar");
+    }
+
+    baz(); // TypeError: baz is not a function
+
+    /* 함수 표현식 */``
+    var baz = function () {
+        console.log("bar2");
+    }
+```
+
+### 예외 처리
+throw : 예외 던지기
+try...catch : 실행을 시도할 블록을 표시하고, 그 안에서 예외가 발생할 경우 처리를 맡을 하나 이상의 반응 명령문을 지정
+finally : try, catch 블록이 끝난 후 이어서 실행할 명령문을 지정
+
+### Error
+Error 객체의 name, message 속성으로부터 오류의 유형에 따라 좀 더 정제된 메시지를 가져올 수 있다.
+
+### 루프와 반복
+**1. for문**
+```javascript
+for ([초기문]; [조건문]; [증감문])
+  문장
+   ``` 
+**2. do...while문**  
+특정한 조건이 거짓으로 판별될 때까지 반복 (조건문 확인 전에 문장 한 번 실행)
+```javascript
+do
+    문장
+while (조건문);
+```
+**3. while문**  
+어떤 조건문이 참이기만 하면 문장을 계속해서 수행
+```javascript
+while (조건문)
+   문장
+```
+**4. 레이블문**  
+프로그램에서 다른 곳으로 참조할 수 있도록 식별자로 문을 제공
+```javascript
+label:
+    statement
+```
+**5. for...in문**  
+객체의 열거 속성 이름을 통해 지정된 변수를 반복
+```javascript
+for (variable in object) {
+    statements
+}
+```
+**6. for...of문**  
+각각의 고유한 특성의 값을 실행할 명령과 함께 사용자 지정 반복 후크를 호출하여, 반복 가능한 객체를 통해 반복하는 루프 생성
+```javascript
+for (variable of object) {
+    statement
+}
+```
+
+#### for...in과 for...of의 차이
+```javascript
+let arr = [3, 5, 7];
+arr.foo = "hello";
+
+for (let i in arr) {
+  console.log(i); // logs "0", "1", "2", "foo"
+}
+
+for (let i of arr) {
+  console.log(i); // logs "3", "5", "7"
+}
+```
+
+### 함수 표현식
+함수 표현식(function expression) = 익명 함수
+``` javascript
+const square = function (number) {
+    return number * number;
+};
+
+const x = square(4);
+```
+
+함수 표현식에서도 함수 이름 지정 가능
+```javascript
+const factorial = function fac(n) {
+  return n < 2 ? 1 : n * fac(n - 1);
+};
+
+console.log(factorial(3));
+```
+
+### 나머지 매개변수
+```javascript
+function multiply(multiplier, ...theArgs) {
+  return theArgs.map((x) => multiplier * x);
+}
+
+var arr = multiply(2, 1, 2, 3);
+console.log(arr); // [2, 4, 6]
+```
+
+### 화살표 함수
+```javascript
+var a3 = a.map((s) => s.length);
+```
+
+### instanceof
+지정한 객체가 지정한 객체 타입에 속하면 true를 반환
+```javascript
+objectName instanceof objectType;
 ```
