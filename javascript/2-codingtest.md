@@ -96,4 +96,31 @@ console.log(parseInt(str, 10)); /* str을 10진수로 변경 */
 **parseFloat**
 - 값을 받아 실수를 반환
 - 문자열의 첫 글자가 숫자로 변환할 수 없는 경우 NaN 반환
-  
+
+
+### 정규표현식
+문자열에서 특정 문자 조합을 찾기 위한 패턴
+RegExp의 exec()와 test() 메서드를 사용할 수 있다.
+String의 match(), matchAll(), replace(), replaceAll(), search(), split() 메서드도 사용할 수 있다.
+
+#### 정규표현식 리터럴
+```javascript
+const re = /ab+c/; /* 정규 표현식 리터럴, 스크립트를 불러올 때 컴파일 됨 */
+
+const re = new RegExp("ab+c"); /* 생성자 함수 사용, 런타임에 컴파일 됨 */
+```
+- 슬래시로 패턴을 감싸 작성한다.
+
+**escape**
+역슬래시(\) 이용
+```
+ex) a*b와 일치해야 한다면 /a\*b/를 사용
+ex) "A:\", "B:\", "C:\", ..., "Z:\"와 일치해야 할 때, 역슬래시의 경우에도 /[A-Z]:\\/처럼 앞에 \를 하나 더 붙여서 사용
+```
+
+정규표현식 뒤의 g는 전체 문자열을 탐색해서 모든 일치를 반환하도록 지정하는 "전역 탐색 플래그"이다.
+```javascript
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $&은 일치한 문자열 전체를 의미
+}
+```
