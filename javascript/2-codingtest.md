@@ -31,6 +31,20 @@ console.log(result);
   arr.reduce(callback[, initialValue])
 ```
 
+5. some
+- 배열 안의 어떤 요소라도 주어진 판별 함수를 적어도 하나라도 통과하는지 테스트
+```javascript
+array.some((element) => element % 2 === 0);
+/* 짝수가 하나라도 존재한다면 true, 하나도 없으면 false */
+```
+
+6. every
+- 배열의 모든 요소가 제공된 함수로 구현된 테스트를 통과하는지 테스트
+```javascript
+array.every((value) => value < 40);
+/* 모든 원소가 40보다 작다면 true, 하나라도 40보다 크거나 같은 값이 있다면 false) */
+```
+
 매개변수
 callback
 - 배열의 각 요소에 대해 실행할 함수
